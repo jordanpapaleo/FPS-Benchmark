@@ -1,0 +1,22 @@
+{
+  "name": "Famous-Lessons",
+  "version": "0.1.0",
+  "description": "FPS-Benchmark",
+  "scripts": {
+    "start": "npm lint",
+    "lint-eslint": "eslint src/",
+    "lint-jscs": "jscs src/",
+    "lint": "npm run lint-eslint && npm run lint-jscs"
+  },
+  "author": "Jordan Papaleo <papaleowebdev@gmail.com>",
+  "license": "ISC",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jordanpapaleo/FPS-Benchmark,git"
+  },
+  "devDependencies": {
+    "eslint": "^0.9.2",
+    "jscs": "^1.5.9"
+  }
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        .famous circle {
+            fill: orangered;
+        }
+
+        .famous.circle {
+            background-color: orangered;
+        }
+
+        .greensock circle {
+            fill: green;
+        }
+
+        .greensock.circle {
+            background-color: green;
+        }
+
+        .main text {
+            font: 10px sans-serif;
+        }
+
+        .axis line, .axis path {
+            shape-rendering: crispEdges;
+            stroke: black;
+            fill: none;
+        }
+
+        .legend {
+            border: 1px solid #777777;
+            width: 150px;
+            position: absolute;
+            border-radius: 4px;
+            left: 650px;
+            color: #777777;
+            top: 25px;
+        }
+
+        .circle {
+            float: left;
+            margin-top: 5px;
+            margin-left: 5px;
+            margin-right: 5px;
+            width: 10px;
+            height: 10px;
+            background: red;
+            -moz-border-radius: 50px;
+            -webkit-border-radius: 50px;
+            border-radius: 50px;
+        }
+
+        .y-label {
+            position: absolute;
+            top: 240px;
+            left: 12px;
+            transform: rotateZ(-90deg);
+            color: #777777;
+        }
+
+        .x-label {
+            position: absolute;
+            bottom: -13px;
+            width: 40px;
+            text-align: center;
+            left: 408px;
+            color: #777777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbav navbar-default">
+            <div class="navbar-header">
+                <a class="navbar-brand">Benchmark Tests</a>
+            </div>
+
+            <div class="navbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="tests/famous/index.html">Test Famous-Angular</a>
+                    </li>
+                    <li>
+                        <a href="tests/greensock/index.html">Test GreenSock</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <h1>GreenSock v Famous-Angular</h1>
+
+
+        <div class="row">
+            <div class="col-md-12" id="charts">
+                <div class="legend">
+                    <div class="circle famous"></div> Famous-Angular <br>
+                    <div class="circle greensock"></div> GreenSock
+                </div>
+                <div class="x-label">Time</div>
+                <div class="y-label">FPS</div>
+                <svg class="chart"></svg>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
+    <script type="text/javascript" src="scripts/scatter-plot.js"></script>
+</body>
+</html>
