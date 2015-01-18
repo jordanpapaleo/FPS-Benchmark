@@ -1,9 +1,9 @@
 {
-  "name": "Famous-Lessons",
+  "name": "FPS-Benchmark",
   "version": "0.1.0",
-  "description": "FPS-Benchmark",
+  "description": "This is a benchmark tool to be used for benchmarking frames per second in an app",
   "scripts": {
-    "start": "npm lint",
+    "start": "npm run lint",
     "lint-eslint": "eslint src/",
     "lint-jscs": "jscs src/",
     "lint": "npm run lint-eslint && npm run lint-jscs"

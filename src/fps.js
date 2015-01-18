@@ -7,7 +7,7 @@
 
 (function() {
     var FPS = {
-        props:  {
+        props: {
             frames: 0,
             startTime: undefined,
             endTime: undefined,
@@ -18,14 +18,7 @@
     };
 
     FPS.init = function(config) {
-        if(config) {
-            this.config = config;
-        } else {
-            this.config = {
-                duration: 5000
-            }
-        }
-
+        this.config = (config) ? config : { duration: 5000 };
         this.appendFlashScreen();
         this.start();
     };
@@ -34,13 +27,13 @@
     FPS.appendFlashScreen = function() {
         var div = document.createElement('div');
             div.id = 'flashScreen';
-            div.style.position = "absolute";
+            div.style.position = 'absolute';
             div.style.top = 0;
             div.style.bottom = 0;
             div.style.left = 0;
             div.style.right = 0;
             div.style.zIndex = 1000000;
-            div.style.display = "none";
+            div.style.display = 'none';
             div.style.opacity = .75;
 
         document.body.appendChild(div);
@@ -48,30 +41,29 @@
 
     // Used to activate the visual notification for the end FPS recording
     FPS.flashScreen = function(status) {
-        var flashScreen = document.getElementById("flashScreen");
+        var flashScreen = document.getElementById('flashScreen');
         var color;
 
         switch(status) {
-            case "fail":
-                color = "red";
+            case 'fail':
+                color = 'red';
                 break;
-            case "othercase":
-                color = "yellow";
+            case 'othercase':
+                color = 'yellow';
                 break;
-            case "success":
-                color = "green";
+            case 'success':
+                color = 'green';
                 break;
             default:
-                color = "green";
+                color = 'green';
         }
-
 
         if(flashScreen) {
             flashScreen.style.backgroundColor = color;
-            flashScreen.style.display = "block";
+            flashScreen.style.display = 'block';
 
             setTimeout(function() {
-                flashScreen.style.display = "none";
+                flashScreen.style.display = 'none';
             }, 200);
         }
     };
@@ -83,7 +75,7 @@
         //This is a series of 3 parallel events running to track frames, collect data, and countdown collect time
         _initRAF();
         this.initCollecting();
-        this.startCountdown()
+        this.startCountdown();
     };
 
     // Initializes the data collection interval.
@@ -117,11 +109,11 @@
 
     FPS.stop = function() {
         this.props.endTime = window.performance.now();
-        this.flashScreen("success");
+        this.flashScreen('success');
         var fpsInfo = this.prepData();
 
         if(fpsInfo.avg && fpsInfo.records.length > 0) {
-            if(this.config.save && typeof this.config.save === "function") {
+            if(this.config.save && typeof this.config.save === 'function') {
                 this.config.save(fpsInfo);
             } else {
                 this.save(fpsInfo);
@@ -158,26 +150,24 @@
     }
 
     function _getUserAgent() {
-        var userAgent = "";
+        var userAgent = '';
         var uaString = navigator.userAgent;
 
-        var i = uaString.indexOf("(");
-        var j = uaString.indexOf(")");
+        var i = uaString.indexOf('(');
+        var j = uaString.indexOf(')');
 
         userAgent = uaString.substring(i + 1, j);
-        userAgent = userAgent.replace(/;/g, "");
+        userAgent = userAgent.replace(/;/g, '');
 
         return userAgent;
     }
 
     function _averageArray(array) {
-        var average;
-
         var totalRecords = array.length;
-        var sum = array.reduce(function(total, num){ return total + num }, 0);
-        average = Math.round((sum / totalRecords) * 100) / 100;
-
-        return average;
+        var sum = array.reduce(function(total, num) {
+            return total + num;
+        }, 0);
+        return Math.round((sum / totalRecords) * 100) / 100;
     }
 
     //Public interface
