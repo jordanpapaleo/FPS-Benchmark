@@ -20,6 +20,7 @@ This is to be used for collecting frame per second statistics on an appilcation 
 * The data collecting can be initialized a couple of different ways:
 * FPS.init() This will run the tests and output the contents to the console and default to a 5 second test window.
 * FPS.init({ duration: ms, save: function(data) {} }) This allows you to set the duration of the test and pass a function giving you control of the results.
+* The screen will flash green once the test has completed
 
 # Support
 * Please submit issues as Github issues.  
