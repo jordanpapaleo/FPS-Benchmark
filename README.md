@@ -26,4 +26,4 @@ This is to be used for collecting frame per second statistics on an appilcation 
 
 # Todo
 * Add a shim for browsers that do not support request animation framework
-* Put file in a CDN
+* Add changelog auto generation
