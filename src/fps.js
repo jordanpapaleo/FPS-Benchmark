@@ -1,6 +1,5 @@
 /**
  * Fps Benchmark
- * @version v0.1.0
  * @link https://github.com/jordanpapaleo/FPS-Benchmark
  * @license MPL v2.0
  */

@@ -1,0 +1,25 @@
+{
+  "name": "FPS-Benchmark",
+  "version": "0.1.1",
+  "homepage": "https://github.com/jordanpapaleo/FPS-Benchmark",
+  "authors": [
+    "Jordan Papaleo <papaleowebdev@gmail.com>"
+  ],
+  "description": "This is a tool to be used for benchmarking frames per second in an app",
+  "keywords": [
+    "JavaScript",
+    "Benchmark",
+    "FPS",
+    "Request",
+    "Animation",
+    "Frame"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
